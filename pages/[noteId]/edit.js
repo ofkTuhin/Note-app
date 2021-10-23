@@ -7,7 +7,7 @@ const  UpdateData=({note})=> {
     const {data}=note
     console.log(data)
    const [form,setForm]= useState({title:data.title,description:data.description})
-   const [isSubmitting,setIsSubmitting]=useState(false)
+   
  
    const router=useRouter()
 
@@ -32,14 +32,14 @@ const  UpdateData=({note})=> {
     catch (error) {
         console.log(error)
     }
-    e.target.reset()
+    
        console.log(form)
    }
    
    const handleChange=(e)=>{
        setForm({
            ...form,
-           [e.target.name]:e.target.defaultValue
+           [e.target.name]:e.target.value
        })
    }
 
@@ -51,20 +51,20 @@ const  UpdateData=({note})=> {
    
     return (
         <div>
-          {
-              isSubmitting? <div><h2>loading....</h2></div>:
+          
+            
 
               <div className={styles.formContainer}>
 
                   <form onSubmit={handleSubmit}>
-                      <input onChange={handleChange}   type="text" name="title" placeholder="title" required /><br />
-                      <textarea onChange={handleChange}  name="description" placeholder="description"  rows="10" required></textarea><br />
+                      <input onChange={handleChange} defaultValue={data.title}  type="text" name="title" placeholder="title" required /><br />
+                      <textarea onChange={handleChange}  defaultValue={data.description}  name="description" placeholder="description"  rows="10" required></textarea><br />
                       <input type="submit" value="Update" />
 
                   </form>
 
               </div>
-          }  
+            
         </div>
     )
 }

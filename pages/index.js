@@ -1,7 +1,7 @@
 
 import styles from '../styles/Home.module.css'
 import { useRouter } from 'next/router'
-import Link from 'next/link'
+
 
  const Home =({data}) =>{
  console.log(data)

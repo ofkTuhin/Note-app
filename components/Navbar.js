@@ -6,10 +6,10 @@ function Navbar() {
     return (
         <>
            <nav className={styles.nav}>
-               <div className={styles.list}>  <Link href="/"><h3>Note</h3></Link></div>
+               <div className={styles.list}>  <Link href="/" passHref><h3>Note</h3></Link></div>
                <ul>
                   
-                   <Link href="/new"><li className={styles.list}>create note</li></Link>
+                   <Link href="/new" passHref><li className={styles.list}>create note</li></Link>
                </ul>
                </nav> 
         </>

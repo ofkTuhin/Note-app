@@ -4,8 +4,7 @@ import styles from '../styles/new.module.css'
 
 const  NewData=()=> {
    const [form,setForm]= useState({title:"",description:""})
-   const [isSubmitting,setIsSubmitting]=useState(false)
-   const [error,setError]=useState()
+   
    const router=useRouter()
 
    const handleSubmit= async(e)=>{
@@ -46,8 +45,7 @@ const  NewData=()=> {
    
     return (
         <div>
-          {
-              isSubmitting? <div><h2>loading....</h2></div>:
+         
 
               <div className={styles.formContainer}>
 
@@ -59,7 +57,7 @@ const  NewData=()=> {
                   </form>
 
               </div>
-          }  
+          
         </div>
     )
 }
