@@ -1,0 +1,20 @@
+.viewCard{
+    width: 30%;
+    padding: 10px 20px;
+    box-shadow: 0px 0px 7px rgb(226, 220, 220);
+    margin: 20px auto;
+}
+.cardTitle{
+    text-align: center;
+    margin: 10px 0px;
+}
+.cardDesc{
+text-align: center;
+}
+.deleteButton{
+    background-color: red;
+    border:1px red;
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: white;
+}
