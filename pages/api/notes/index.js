@@ -2,6 +2,8 @@ import dbConnect from "../../../utils/dbConnection";
 import Note from "../../../models/Note";
  
 dbConnect()
+
+
 const ApiData= async(req,res)=>{
     const {method}=req;
     switch (method) {
@@ -27,4 +29,5 @@ const ApiData= async(req,res)=>{
             break;
     }
 }
+
 export default ApiData;

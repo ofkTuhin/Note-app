@@ -54,10 +54,10 @@ import { useRouter } from 'next/router'
   )
 }
 
-export const getStaticProps=async()=>{
+export const getServerSideProps=async()=>{
   const res=await fetch('http://localhost:3000/api/notes')
   // const noteData=await res.json()
-  const{data}=await res.json()
+  const{data}= await res.json()
   console.log(data)
   return{
     props:{data}
