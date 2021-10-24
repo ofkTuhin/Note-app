@@ -1,15 +1,15 @@
 import React from 'react'
 import styles from '../styles/Navbar.module.css'
-import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 function Navbar() {
+    const router=useRouter()
     return (
         <>
            <nav className={styles.nav}>
-               <div className={styles.list}>  <Link href="/" passHref><h3>Note</h3></Link></div>
+               <div className={styles.list}>  <h3 onClick={() => router.push('/')}> Note </h3></div>
                <ul>
-                  
-                   <Link href="/new" passHref><li className={styles.list}>create note</li></Link>
+                   <li className={styles.list}  onClick={() => router.push('/new')}>create note</li>
                </ul>
                </nav> 
         </>
