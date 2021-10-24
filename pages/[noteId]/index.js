@@ -1,18 +1,20 @@
 
+
 // export async function getStaticPaths() {
-//   // Call an external API endpoint to get posts
-//   const res=await fetch('http://localhost:3000/api/notes')
-//   const {data}=await res.json()
-
-//   const paths = data.map((note) => ({
-//     params: { id: note._id },
-//   }))
-
-//   return { paths, fallback: false }
-// }
+    
+//     const res = await fetch('http://localhost:3000/api/notes')
+//     const {data} = await res.json()
+    
+  
+  
+//     const paths = data.map((i) => ({
+//       params: { id:i._id.toString()},
+//     }))
+//     return { paths, fallback: false}
+//   }
 
 // // This also gets called at build time
-// export async function getStaticProps({ params }) {
+// export async function getStaticProps({ params}) {
 
 //   const res = await fetch(`http://localhost:3000/api/notes/${params.id}`)
 //   const note = await res.json()
@@ -61,6 +63,7 @@ const NoteById = ({ note }) => {
 NoteById.getInitialProps = async ({ query: { noteId } }) => {
     const res = await fetch(`http://localhost:3000/api/notes/${noteId}`)
     const { data } = await res.json()
+    console.log(data)
     return { note: data }
 }
 

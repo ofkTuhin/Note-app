@@ -4,6 +4,9 @@ import { useRouter } from 'next/router'
 
 
  const Home =({data}) =>{
+   const ac=1234
+   const abc=ac.toString()
+   console.log(abc)
  console.log(data)
 
   const router=useRouter()
@@ -11,6 +14,7 @@ import { useRouter } from 'next/router'
   <>
   {
     data.map(note=>{
+      console.log(note._id.toString())
    return(
     <>
     <div key={note._id} className={styles.container}>
@@ -33,7 +37,7 @@ import { useRouter } from 'next/router'
         <a className={`${styles.editViewButton} ${styles.view}`}
         
         onClick={()=>{
-          console.log(note._id)
+          console.log(note._id.string)
           router.push(
             {
               pathname:'/[noteId]',
@@ -54,7 +58,7 @@ import { useRouter } from 'next/router'
   )
 }
 
-export const getServerSideProps=async()=>{
+export const getStaticProps=async()=>{
   const res=await fetch('http://localhost:3000/api/notes')
   // const noteData=await res.json()
   const{data}= await res.json()
