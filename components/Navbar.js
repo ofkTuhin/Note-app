@@ -7,9 +7,9 @@ function Navbar() {
     return (
         <>
            <nav className={styles.nav}>
-               <div className={styles.list}>  <h3 onClick={() => router.push('/')}> Note </h3></div>
+               <div className={styles.list}>  <h3 > Note </h3></div>
                <ul>
-                   <li className={styles.list}  onClick={() => router.push('/new')}>create note</li>
+                   <li className={styles.list}  >create note</li>
                </ul>
                </nav> 
         </>
